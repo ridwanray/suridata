@@ -46,9 +46,9 @@ def generate_pairs(chunked_employees):
 
 
 def main(employees):
-    num_of_chunks = 2
+    chunk_size = 2
 
-    chunks = list(chunk_generator(employees, num_of_chunks))
+    chunks = list(chunk_generator(employees, chunk_size))
 
     # Use multiprocessing Pool to process chunks in parallel
     with Pool() as pool:
