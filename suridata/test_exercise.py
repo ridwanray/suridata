@@ -1,5 +1,5 @@
 import unittest
-from exercise import clean_data, chunk_generator, generate_pairs, main
+from exercise import clean_data, generate_pairs, main
 
 class TestEmployeePairing(unittest.TestCase):
 
@@ -14,10 +14,6 @@ class TestEmployeePairing(unittest.TestCase):
         expected_result = [('John', 'Engineer', 170), ('Doe', 'Doctor', 180), ('Smith', 'Artist', 160)]
         self.assertEqual(cleaned_employees, expected_result)
 
-    def test_chunk_generator(self):
-        employees = [('John', 'Engineer', 170), ('Doe', 'Doctor', 180), ('Smith', 'Artist', 160)] * 5 # duplicate employees
-        chunks = list(chunk_generator(employees, 2))
-        self.assertEqual(len(chunks), 2)  # 2 chunks 
 
     def test_generate_pairs(self):
         """Test the generate_pairs function."""
